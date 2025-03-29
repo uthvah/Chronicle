@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Chronicle eBook Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts/simple.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>Chronicle</h1>
+      <nav class="nav">
+        <button id="dashboardBtn" class="nav-btn active">Dashboard</button>
+        <button id="browseBtn" class="nav-btn">Browse</button>
+        <button id="recommendBtn" class="nav-btn">Recommendations</button>
+        <button id="settingsBtn" class="nav-btn">Settings</button>
+      </nav>
+    </header>
+    <main>
+      <!-- Dashboard Section -->
+      <section id="dashboardSection" class="section">
+        <div class="controls">
+          <button id="selectFileBtn" class="btn">Select File</button>
+          <button id="processBtn" class="btn" disabled>Process & Add</button>
+          <input type="text" id="searchInput" placeholder="Search library...">
+          <button id="searchBtn" class="btn">Search</button>
+          <button id="sendKindleBtn" class="btn">Send Pending to Kindle</button>
+        </div>
+        <div id="libraryGrid" class="grid"></div>
+      </section>
+      <!-- Browse Section -->
+      <section id="browseSection" class="section hidden">
+        <h2>Trending Books</h2>
+        <div class="controls" style="max-width: 400px; margin: 0 auto;">
+          <input type="text" id="browseSearchInput" placeholder="Search LibGen...">
+          <button id="browseSearchBtn" class="btn" style="width: 100%; margin-top: 10px;">Search</button>
+        </div>
+        <div id="trendingGrid" class="grid"></div>
+        <button id="trendingLoadMore" class="btn load-more">Load More Trending</button>
+        <h2>Genres</h2>
+        <div id="genreGrid" class="grid">
+          <div class="genre-card" data-genre="Fantasy">Fantasy</div>
+          <div class="genre-card" data-genre="Mystery">Mystery</div>
+          <div class="genre-card" data-genre="Science Fiction">Sci-Fi</div>
+          <div class="genre-card" data-genre="Romance">Romance</div>
+          <div class="genre-card" data-genre="Nonfiction">Nonfiction</div>
+        </div>
+        <div id="browseResults" class="grid"></div>
+        <button id="browseLoadMore" class="btn load-more">Load More Genre</button>
+      </section>
+      <!-- Recommendations Section -->
+      <section id="recommendSection" class="section hidden">
+        <h2>Recommended for You</h2>
+        <div id="recommendGrid" class="grid"></div>
+        <button id="recommendLoadMore" class="btn load-more">Load More Recommendations</button>
+      </section>
+      <!-- Settings Section -->
+      <section id="settingsSection" class="section hidden">
+        <h2>Settings</h2>
+        <label for="outputPathInput">Output Path:</label>
+        <input type="text" id="outputPathInput" placeholder="Enter output folder path">
+        <label for="languageSelect">Language Filter:</label>
+        <select id="languageSelect">
+          <option value="eng" selected>English</option>
+          <option value="fre">French</option>
+          <option value="spa">Spanish</option>
+          <option value="ger">German</option>
+        </select>
+        <button id="saveSettingsBtn" class="btn">Save Settings</button>
+        <h3>Library Stats</h3>
+        <div id="statsArea"></div>
+      </section>
+    </main>
+  </div>
+  <script src="/eel.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
